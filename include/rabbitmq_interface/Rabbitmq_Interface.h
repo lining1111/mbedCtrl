@@ -17,6 +17,7 @@ using namespace std;
 
 class Rabbitmq_Interface {
 
+public:
     struct RabbitmqConfig {
         string hostname;
         unsigned int hostport;

@@ -17,3 +17,8 @@ target_link_libraries(test_ping ${LINK_LIBS})
 #test_ota
 add_executable(test_ota test_ota.cpp)
 target_link_libraries(test_ota ${LINK_LIBS})
+#test_mbedCtrl
+add_executable(test_mbedCtrl test_mbedCtrl.cpp
+        ../src/MbedCtrl.cpp
+        ../src/dev_chargingPile/ChargingPile.cpp)
+target_link_libraries(test_mbedCtrl ${LINK_LIBS})

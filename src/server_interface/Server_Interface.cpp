@@ -287,7 +287,13 @@ void Server_Interface::ThreadCheckStatus(void *p) {
 
     cout << "Server_Interface " << __FUNCTION__ << " run" << endl;
     while (server->isRun) {
+
         sleep(server->checkStatus_timeval);
+
+        if (server->heartBeatTimeval <= 0) {
+            //设置为0的话，则不进行检查
+            continue;
+        }
 
         timeval tv_now;
 

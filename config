@@ -1,0 +1,9 @@
+cloud_hostname 127.0.0.1
+cloud_hostport 15672
+cloud_usrname guest
+cloud_usrpasswd guest
+cloud_vhost /
+cloud_channel 1
+cloud_community 
+chargingPile_serverPort 8131
+chargingPile_heartBeat 0
