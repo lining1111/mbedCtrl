@@ -36,6 +36,7 @@ set(LINK_LIBS m pthread mysqlclient zlog crypto ssl curl freefare nfc jsoncpp ra
 set(SRC_DIRS src
         src/config
         src/ping
+        src/dev_chargingPile
         )
 
 foreach (src_dir ${SRC_DIRS})
@@ -59,8 +60,7 @@ add_library(myRingBuffer STATIC ${LIBRingBuffer_FILES})
 
 #server
 set(LIBServer_FILES src/server_interface/Server_Interface.cpp
-        src/server_interface/ClientInfo.cpp
-        src/server_business/Server_Business.cpp)
+        src/server_interface/ClientInfo.cpp)
 add_library(myServer STATIC ${LIBServer_FILES})
 #client
 set(LIBClient_FILES src/client_interface/Client_Interface.cpp)

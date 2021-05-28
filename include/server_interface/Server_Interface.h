@@ -70,12 +70,6 @@ public:
     //processRecv
     typedef void (*ProcessRecv)(Server_Interface &server);
 
-    //heartBeat
-    typedef int (*HeartBeat)(Server_Interface &server, ClientInfo &clientInfo);
-
-    //callback
-    typedef int (*Callback)(Server_Interface &server, Server_Interface::Msg, void *pUser);
-
     ProcessRecv UserProcessRecv;
 
 public:
