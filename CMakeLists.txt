@@ -79,8 +79,8 @@ set(LINK_LIBS myServer myClient myRabbitmq
 add_subdirectory(tools)
 add_subdirectory(test)
 
-add_executable(pi-mbedCtrl main.cpp ${SRC_FILES})
-target_link_libraries(pi-mbedCtrl ${LINK_LIBS})
+add_executable(mbedCtrl main.cpp ${SRC_FILES})
+target_link_libraries(mbedCtrl ${LINK_LIBS})
 
 
 ##doxygen
