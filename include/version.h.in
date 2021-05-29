@@ -1,9 +1,9 @@
 //
-// Created by root on 2021/3/6.
+// Created by lining on 2021/3/6.
 //
 
-#ifndef DRIVER_VERSION_H
-#define DRIVER_VERSION_H
+#ifndef _VERSION_H
+#define _VERSION_H
 
 #cmakedefine PROJECT_NAME "@CMAKE_PROJECT_NAME@"
 #cmakedefine PROJECT_VERSION "@CMAKE_PROJECT_VERSION@"
@@ -11,4 +11,4 @@
 #cmakedefine PROJECT_VERSION_MINOR "@CMAKE_PROJECT_VERSION_MINOR@"
 #cmakedefine PROJECT_VERSION_PATCH "@CMAKE_PROJECT_VERSION_PATCH@"
 
-#endif //DRIVER_VERSION_H
+#endif //_VERSION_H

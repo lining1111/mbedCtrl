@@ -1,9 +1,9 @@
 //
-// Created by root on 2021/2/28.
+// Created by lining on 2021/2/28.
 //
 
-#ifndef RINGBUFFER_H
-#define RINGBUFFER_H
+#ifndef _RINGBUFFER_H
+#define _RINGBUFFER_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -39,4 +39,4 @@ size_t RingBuffer_Write(RingBuffer *rb, const void *data, size_t count);
 }
 #endif
 
-#endif //DRIVER_RINGBUFFER_H
+#endif //_RINGBUFFER_H

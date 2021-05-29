@@ -1,9 +1,9 @@
 //
-// Created by root on 2021/3/23.
+// Created by lining on 2021/3/23.
 //
 
-#ifndef MY_RPI_DOOR_CLIENT_INTERFACE_H
-#define MY_RPI_DOOR_CLIENT_INTERFACE_H
+#ifndef _CLIENT_INTERFACE_H
+#define _CLIENT_INTERFACE_H
 
 #include <string>
 #include <queue>
@@ -92,4 +92,4 @@ public:
 };
 
 
-#endif //MY_RPI_DOOR_CLIENT_INTERFACE_H
+#endif //_CLIENT_INTERFACE_H

@@ -2,8 +2,8 @@
 // Created by lining on 5/28/21.
 //
 
-#ifndef MBEDCTRL_MBEDCTRL_H
-#define MBEDCTRL_MBEDCTRL_H
+#ifndef _MBEDCTRL_H
+#define _MBEDCTRL_H
 
 #include <dev_chargingPile/ChargingPile.h>
 #include <rabbitmq_interface/Rabbitmq_Interface.h>
@@ -72,4 +72,4 @@ private:
 };
 
 
-#endif //MBEDCTRL_MBEDCTRL_H
+#endif //_MBEDCTRL_H

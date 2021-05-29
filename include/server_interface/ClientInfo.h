@@ -1,9 +1,9 @@
 //
-// Created by root on 2021/3/28.
+// Created by lining on 2021/3/28.
 //
 
-#ifndef MY_RPI_DOOR_CLIENTINFO_H
-#define MY_RPI_DOOR_CLIENTINFO_H
+#ifndef _CLIENTINFO_H
+#define _CLIENTINFO_H
 
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -40,4 +40,4 @@ namespace clientInfo {
     };
 }
 
-#endif //MY_RPI_DOOR_CLIENTINFO_H
+#endif //_CLIENTINFO_H

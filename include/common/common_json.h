@@ -1,9 +1,9 @@
 //
-// Created by root on 2021/3/30.
+// Created by lining on 2021/3/30.
 //
 
-#ifndef MY_RPI_DOOR_COMMON_JSON_H
-#define MY_RPI_DOOR_COMMON_JSON_H
+#ifndef _COMMON_JSON_H
+#define _COMMON_JSON_H
 
 #include <string>
 #include <map>
@@ -928,4 +928,4 @@ namespace common_json {
     int SetInfo_RemoteGate_Back(string &json_str, RemoteGate_ReqBack remoteGateReqBack);
 
 }
-#endif //MY_RPI_DOOR_COMMON_JSON_H
+#endif //_COMMON_JSON_H

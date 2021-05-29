@@ -2,8 +2,8 @@
 // Created by lining on 5/28/21.
 //
 
-#ifndef MBEDCTRL_CHARGINGPILE_H
-#define MBEDCTRL_CHARGINGPILE_H
+#ifndef _CHARGINGPILE_H
+#define _CHARGINGPILE_H
 
 #include <server_interface/Server_Interface.h>
 
@@ -33,4 +33,4 @@ public:
 };
 
 
-#endif //MBEDCTRL_CHARGINGPILE_H
+#endif //_CHARGINGPILE_H

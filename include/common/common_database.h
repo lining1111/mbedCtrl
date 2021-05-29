@@ -1,9 +1,9 @@
 //
-// Created by root on 2021/3/31.
+// Created by lining on 2021/3/31.
 //
 
-#ifndef MY_RPI_DOOR_COMMON_DATABASE_H
-#define MY_RPI_DOOR_COMMON_DATABASE_H
+#ifndef _COMMON_DATABASE_H
+#define _COMMON_DATABASE_H
 
 #include "database/DataBase.h"
 #include <string>
@@ -1341,4 +1341,4 @@ namespace common_database {
 
 }
 
-#endif //MY_RPI_DOOR_COMMON_DATABASE_H
+#endif //_COMMON_DATABASE_H

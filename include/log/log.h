@@ -1,9 +1,9 @@
 //
-// Created by root on 2021/2/27.
+// Created by lining on 2021/2/27.
 //
 
-#ifndef DRIVER_LOG_H
-#define DRIVER_LOG_H
+#ifndef _LOG_H
+#define _LOG_H
 
 #include <string>
 #include <zlog.h>
@@ -37,4 +37,4 @@ extern int logInit(int index);
 
 
 
-#endif //DRIVER_LOG_H
+#endif //_LOG_H

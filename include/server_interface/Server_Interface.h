@@ -1,9 +1,9 @@
 //
-// Created by root on 2021/3/26.
+// Created by lining on 2021/3/26.
 //
 
-#ifndef MY_RPI_DOOR_SERVER_INTERFACE_H
-#define MY_RPI_DOOR_SERVER_INTERFACE_H
+#ifndef _SERVER_INTERFACE_H
+#define _SERVER_INTERFACE_H
 
 #include <vector>
 #include <sys/epoll.h>
@@ -107,4 +107,4 @@ public:
 };
 
 
-#endif //MY_RPI_DOOR_SERVER_INTERFACE_H
+#endif //_SERVER_INTERFACE_H

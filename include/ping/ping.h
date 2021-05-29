@@ -2,8 +2,8 @@
 // Created by mylord on 2019/9/26.
 //
 
-#ifndef PING_H
-#define PING_H
+#ifndef _PING_H
+#define _PING_H
 
 #include <iostream>
 #include <stdlib.h>
@@ -52,4 +52,4 @@ void alarm_handler(int);    //SIGALRM处理程序
 #endif
 
 
-#endif //MYPING_PING_H
+#endif //_PING_H

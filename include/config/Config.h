@@ -1,9 +1,9 @@
 //
-// Created by root on 2021/3/23.
+// Created by lining on 2021/3/23.
 //
 
-#ifndef MY_RPI_DOOR_CONFIG_H
-#define MY_RPI_DOOR_CONFIG_H
+#ifndef _CONFIG_H
+#define _CONFIG_H
 
 #include <string>
 
@@ -34,4 +34,4 @@ public:
 };
 
 
-#endif //MY_RPI_DOOR_CONFIG_H
+#endif //_CONFIG_H

@@ -1,9 +1,9 @@
 //
-// Created by root on 2021/3/29.
+// Created by lining on 2021/3/29.
 //
 
-#ifndef MY_RPI_DOOR_DATABASE_H
-#define MY_RPI_DOOR_DATABASE_H
+#ifndef _DATABASE_H
+#define _DATABASE_H
 
 #ifdef arm64
 
@@ -62,4 +62,4 @@ public:
 };
 
 
-#endif //MY_RPI_DOOR_DATABASE_H
+#endif //_DATABASE_H

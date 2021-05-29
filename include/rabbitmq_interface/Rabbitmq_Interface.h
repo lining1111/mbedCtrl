@@ -1,9 +1,9 @@
 //
-// Created by root on 2021/3/25.
+// Created by lining on 2021/3/25.
 //
 
-#ifndef MY_RPI_DOOR_RABBITMQ_INTERFACE_H
-#define MY_RPI_DOOR_RABBITMQ_INTERFACE_H
+#ifndef _RABBITMQ_INTERFACE_H
+#define _RABBITMQ_INTERFACE_H
 
 #include <iostream>
 #include <amqp.h>

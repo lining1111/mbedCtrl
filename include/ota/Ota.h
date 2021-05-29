@@ -1,5 +1,5 @@
 //
-// Created by root on 2021/5/21.
+// Created by lining on 2021/5/21.
 //
 
 /*
@@ -16,8 +16,8 @@
 
 
 
-#ifndef MY_RPI_DOOR_OTA_H
-#define MY_RPI_DOOR_OTA_H
+#ifndef _OTA_H
+#define _OTA_H
 
 #include <string>
 #include <curl/curl.h>
@@ -60,4 +60,4 @@ public:
 };
 
 
-#endif //MY_RPI_DOOR_OTA_H
+#endif //_OTA_H
