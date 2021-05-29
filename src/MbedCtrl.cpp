@@ -151,7 +151,13 @@ void MbedCtrl::GetConfig(string filePath) {
         while (!reader.eof()) {
             string line;
             getline(reader, line);
-            if (line.empty()) continue;
+            if (line.empty()){
+            continue;
+            }
+            if (line.find("#")==0){
+                //以#开头的认为是注释
+                continue;
+            }
 
             const auto parse = [](const std::string &str) {
                 std::string tmp, key, value;
