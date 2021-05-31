@@ -22,3 +22,7 @@ add_executable(test_mbedCtrl test_mbedCtrl.cpp
         ../src/MbedCtrl.cpp
         ../src/dev_chargingPile/ChargingPile.cpp)
 target_link_libraries(test_mbedCtrl ${LINK_LIBS})
+
+add_executable(test_antsCalls test_antsCalls.cpp
+        ../src/dev_chargingPile/AntsCalls.cpp)
+target_link_libraries(test_antsCalls ${LINK_LIBS})
