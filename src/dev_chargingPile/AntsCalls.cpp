@@ -137,7 +137,7 @@ namespace antsCalls {
         int ret = 0;
         CommonHead head;
         CommonTail tail;
-        uint8_t data[64] = {0};
+        uint8_t data[MaxRecvData] = {0};
         uint8_t dataLen = 0;
         bzero(data, sizeof(data));
         ret = Unpack(buf, len, head, data, &dataLen, tail);
@@ -160,7 +160,7 @@ namespace antsCalls {
         int ret = 0;
         CommonHead head;
         CommonTail tail;
-        uint8_t data[64] = {0};
+        uint8_t data[MaxRecvData] = {0};
         uint8_t dataLen = 0;
         bzero(data, sizeof(data));
         ret = Unpack(buf, len, head, data, &dataLen, tail);
@@ -187,7 +187,7 @@ namespace antsCalls {
         int ret = 0;
         CommonHead head;
         CommonTail tail;
-        uint8_t data[64] = {0};
+        uint8_t data[MaxRecvData] = {0};
         uint8_t dataLen = 0;
         bzero(data, sizeof(data));
         ret = Unpack(buf, len, head, data, &dataLen, tail);
@@ -224,11 +224,36 @@ namespace antsCalls {
      * @return 发生数据包长度
      */
     int SetInfo_GetPortStatus(uint8_t *buf, uint8_t *len, uint8_t port) {
-        return 0;
+        int ret = 0;
+        CommonHead head;
+        head.sop = 0xee;
+        head.cmd = GetPortStatus;
+
+        ret = Pack(head, &port, sizeof(port), buf, len);
+
+        return ret;
     }
 
+    /**
+     * 解包 查询端口当前的充电状态
+     * @param bck out 解包数据
+     * @param buf in 数据包
+     * @param len in 数据包长度
+     * @return 已经解析的数据包长度
+     */
     int GetInfo_GetPortStatus(GetPortStatus_Bck &bck, uint8_t *buf, uint8_t len) {
-        return 0;
+        int ret = 0;
+        CommonHead head;
+        CommonTail tail;
+        uint8_t data[MaxRecvData] = {0};
+        uint8_t dataLen = 0;
+        bzero(data, sizeof(data));
+        ret = Unpack(buf, len, head, data, &dataLen, tail);
+
+        //Bck
+        memcpy(&bck, data, sizeof(bck));
+
+        return ret;
     }
 
 

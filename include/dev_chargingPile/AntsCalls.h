@@ -27,6 +27,7 @@
 
 namespace antsCalls {
     const uint8_t default_session_id[6] = {0, 0, 0, 0, 0, 0};
+#define MaxRecvData (0xff-9)//长度字节为1字节，最大0xff 减去包头(不包括sop)和sum(一字节)
 #pragma pack(1)
     typedef struct {
         uint8_t sop = 0xee;//命令为 ee，应答为 66
