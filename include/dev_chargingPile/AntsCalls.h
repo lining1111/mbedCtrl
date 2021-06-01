@@ -42,10 +42,11 @@ namespace antsCalls {
 #pragma pack()
     //命令码
     enum Cmd {
-        GetPortStatus = 0x01,//服务器读取设备每个端口当前的状态
+        GetAllPortsStatus = 0x01,//服务器读取设备每个端口当前的状态
         SetPortWork = 0x02,//当用户付款以后，通知主设备付款的信息
         CoinInfo = 0x03,//设备上报投币相关的信息
         ChargedStatus = 0x05,//提交充电结束状态（如果端口是刷卡充电且要求退费的上传卡号与退款金额）
+        GetPortStatus = 0x06,//查询端口当前的充电状态
     };
 
 #pragma pack(1)
@@ -96,11 +97,17 @@ namespace antsCalls {
         AlarmSmoke = 0x08,//烟雾报警停止(主板 PCB- DC_Crg_10L_C4.0 以上版本)
     };
 
-    enum ChargedStatus_CardType{
+    enum ChargedStatus_CardType {
         CardOffLine = 0x0001,//离线卡
         CardOnLine = 0xaa33,//在线卡
         NoCard = 0x0000,//此端口无刷卡
     };
+
+    typedef struct {
+        uint8_t port;//充电端口号，0x02 表示2号端口。
+        uint16_t time_power;//表示这一路充电端口的剩余充电时间或者充电电量：1.如果是充电时间则以分钟为单位，如 0x0064 表示 100 分钟。2.如果是充电电量则以 0.01 度（千瓦时）为单位，如 0x0064 表示 100个单位=1 度电量，以分钟 0.01 度，0x00 表示不在充电（包括空闲、故障）
+        uint16_t instantPower;//这一路当前充电的瞬时功率，单位为 0.1W。如 0x0001 表示0.1W
+    } GetPortStatus_Bck;
 
 #pragma pack()
 
@@ -110,7 +117,7 @@ namespace antsCalls {
 
     int Unpack(uint8_t *buf, uint8_t len, CommonHead &head, uint8_t *data, uint8_t *dataLen, CommonTail &tail);
 
-    int SetInfo_GetPortStatus(uint8_t *buf, uint8_t *len);
+    int SetInfo_GetAllPortsStatus(uint8_t *buf, uint8_t *len);
 
     int SetInfo_SetPortWork(uint8_t *buf, uint8_t *len, SetPorkWork_Req req);
 
@@ -119,6 +126,13 @@ namespace antsCalls {
     int GetInfo_CoinInfo(CoinInfo_Bck &bck, uint8_t *buf, uint8_t len);
 
     int GetInfo_ChargedStatus(ChargedStatus_Bck &bck, uint8_t *buf, uint8_t len);
+
+    int SetInfo_RecvChargedStatusSuccess(uint8_t *buf, uint8_t *len);
+
+    int SetInfo_GetPortStatus(uint8_t *buf, uint8_t *len, uint8_t port);
+
+    int GetInfo_GetPortStatus(GetPortStatus_Bck &bck, uint8_t *buf, uint8_t len);
+
 }
 
 

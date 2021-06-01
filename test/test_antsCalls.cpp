@@ -9,7 +9,7 @@ using namespace antsCalls;
 
 int main(int argc, char **argv) {
     CommonHead head;
-    head.cmd = GetPortStatus;
+    head.cmd = GetAllPortsStatus;
 
     uint8_t buf[64];
     bzero(buf, sizeof(buf));

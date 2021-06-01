@@ -91,13 +91,13 @@ namespace antsCalls {
      * @example send EE 09 01 00 00 00 00 00 00 00 08
      *          recv 66 13 01 00 00 00 00 00 00 0A 02 01 01 01 01 01 01 01 01 01 1B （1 端口正在充电，其他端口空闲 ）
      */
-    int SetInfo_GetPortStatus(uint8_t *buf, uint8_t *len) {
+    int SetInfo_GetAllPortsStatus(uint8_t *buf, uint8_t *len) {
         int index = 0;
 
         CommonHead head;
 
         head.sop = 0xee;
-        head.cmd = GetPortStatus;
+        head.cmd = GetAllPortsStatus;
 
         Pack(head, nullptr, 0, buf, len);
         index += *len;
@@ -171,6 +171,18 @@ namespace antsCalls {
         return ret;
     }
 
+    /**
+     * 提交充电结束状态（如果端口是刷卡充电且要求退费的上传卡号与退款金额）
+     * 当某个端口的电动车已经充电结束（不管是已经充满自动停止，或是用户手动拔掉电源），
+     * 调用该接口通知服务器。
+     * 注意：调用该接口以后，系统会在后台根据用户的充电实际情况（比如本来可以充电 100
+     * 分钟，用户只用了 50 分钟）做相应的退款（管理员可以设置到底是退款还是不退款）。
+     * 调用了该接口，该次交易即已经结束，用户再插上线路，肯定是不能再充电的
+     * @param bck out 获取的回复数据
+     * @param buf in 需要解析的包
+     * @param len in 需要解析的包长度
+     * @return 已经解析的包长度
+     */
     int GetInfo_ChargedStatus(ChargedStatus_Bck &bck, uint8_t *buf, uint8_t len) {
         int ret = 0;
         CommonHead head;
@@ -184,6 +196,39 @@ namespace antsCalls {
         memcpy(&bck, data, sizeof(bck));
 
         return ret;
+    }
+
+    /**
+     * 获取充电完成状态的回复信息
+     * @param buf out 回复信息
+     * @param len out 回复信息的长度
+     * @return 信息包长度
+     */
+    int SetInfo_RecvChargedStatusSuccess(uint8_t *buf, uint8_t *len) {
+        int ret = 0;
+        CommonHead head;
+        head.sop = 0xee;
+        head.cmd = ChargedStatus;
+        uint8_t result[1] = {0x01};
+
+        ret = Pack(head, (uint8_t *) result, sizeof(result), buf, len);
+
+        return ret;
+    }
+
+    /**
+     * 查询端口当前的充电状态
+     * @param buf out 发送包数据
+     * @param len out 发送包数据长度
+     * @param port in 需要查询的端口
+     * @return 发生数据包长度
+     */
+    int SetInfo_GetPortStatus(uint8_t *buf, uint8_t *len, uint8_t port) {
+        return 0;
+    }
+
+    int GetInfo_GetPortStatus(GetPortStatus_Bck &bck, uint8_t *buf, uint8_t len) {
+        return 0;
     }
 
 
