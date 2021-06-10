@@ -48,13 +48,28 @@ public:
     int Upload(const string filePath, const string url);
     int Download(const string filePath, const string url);
 
-    //完整性验证
+    /**
+     * 完整性验证
+     * @param fileName 要校验的文件名称
+     * @param digest sha1校验
+     * @return -1:fail,0:success
+     */
     int FileVerifySHA1(string fileName, string digest);
 
-    //从sha1文本中获取摘要对
+    /**
+     * 从sha1文本中获取摘要对
+     * @param digestFileName
+     * @param map_digest
+     * @return
+     */
     int GetFileDigest(string digestFileName, map<string,string> &map_digest);
 
-    //按照日期备份文件
+    /**
+     * 按照日期备份文件
+     * 将文件保存到当前工作目录下的日期文件夹下
+     * @param fileName 要保存文件的名称
+     * @return 保存文件的名称，包含完整路径信息
+     */
     string BackupFileByDate(string fileName);
 
 };

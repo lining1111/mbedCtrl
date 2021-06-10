@@ -17,7 +17,7 @@ INPUT_ENCODING = UTF-8
 OUTPUT_LANGUAGE      = Chinese
 DOXYFILE_ENCODING  = UTF-8
 # 只对头文件中的文档化信息生成程序文档
-FILE_PATTERNS        = *.h *.cpp
+FILE_PATTERNS        = *.h
 
 # 递归遍历当前目录的子目录，寻找被文档化的程序源文件
 RECURSIVE            = YES

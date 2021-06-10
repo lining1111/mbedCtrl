@@ -258,12 +258,6 @@ int Ota::Download(const string filePath, const string url) {
     return curl_state;
 }
 
-/**
- *
- * @param fileName 要校验的文件名称
- * @param digest sha1校验
- * @return -1:fail,0:success
- */
 int Ota::FileVerifySHA1(string fileName, string digest) {
     int ret = -1;
 
@@ -367,12 +361,6 @@ int Ota::GetFileDigest(string digestFileName, map<string, string> &map_digest) {
     }
     return 0;
 }
-
-/**
- * 将文件保存到当前工作目录下的日期文件夹下
- * @param fileName 要保存文件的名称
- * @return 保存文件的名称，包含完整路径信息
- */
 
 string Ota::BackupFileByDate(string fileName) {
 
