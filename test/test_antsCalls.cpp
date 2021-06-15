@@ -22,12 +22,15 @@ int main(int argc, char **argv) {
 
     CommonHead head;
     head.cmd = 0xff;
-    char *data = "865553059745549";
+//    char *data = "865553059745549";
+//    char *data = "865553059533820";
+//    char *data = "33820";
+    uint8_t data[8]={0x03,0x13,0x37,0x46,0xA5,0xD3,0xFC,0x00};
 
     uint8_t buf[64];
     bzero(buf, sizeof(buf));
     uint8_t len = 0;
-    Pack(head, (uint8_t *) data, strlen(data) + 1, buf, &len);
+    Pack(head, (uint8_t *) data, sizeof(data), buf, &len);
 
     for (int i = 0; i < len; i++) {
         printf("%02x ", buf[i]);

@@ -106,8 +106,8 @@ int Server_Interface::Run() {
     thread_processSend = thread(ThreadProcessSend, this);
     thread_processSend.detach();
 
-    thread_checkStatus = thread(ThreadCheckStatus, this);
-    thread_checkStatus.detach();
+//    thread_checkStatus = thread(ThreadCheckStatus, this);
+//    thread_checkStatus.detach();
 
     return 0;
 }

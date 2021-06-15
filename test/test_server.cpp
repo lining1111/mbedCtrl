@@ -11,7 +11,7 @@
 using namespace std;
 
 int main() {
-    Server_Interface *server = new Server_Interface(8131, nullptr, 0);
+    Server_Interface *server = new Server_Interface(8081, nullptr, 0);
     server->Open();
     server->Run();
     string msg_send;
