@@ -20,7 +20,7 @@ namespace antsCalls {
         CommonTail tail;
 
         //1.head
-        head.len = (sizeof(CommonHead) - 1) + dataLen + sizeof(CommonTail);//数据头去掉sop +数据长度+数据包尾
+        head.len = (sizeof(CommonHead) - 2) + dataLen + sizeof(CommonTail);//数据头去掉sop len +数据长度+数据包尾
         //copy head to buf
         memcpy(buf + index, &head, sizeof(head));
         index += sizeof(head);

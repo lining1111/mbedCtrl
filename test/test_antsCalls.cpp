@@ -3,18 +3,37 @@
 //
 
 #include <cstring>
+#include <cstdio>
 #include "dev_chargingPile/AntsCalls.h"
 
 using namespace antsCalls;
 
 int main(int argc, char **argv) {
+//    CommonHead head;
+//    head.cmd = GetAllPortsStatus;
+//    uint8_t data[1] = {0x00};
+//
+//    uint8_t buf[64];
+//    bzero(buf, sizeof(buf));
+//    uint8_t len = 0;
+//    Pack(head, data, sizeof(data), buf, &len);
+
+
+
     CommonHead head;
-    head.cmd = GetAllPortsStatus;
+    head.cmd = 0xff;
+    char *data = "865553059745549";
 
     uint8_t buf[64];
     bzero(buf, sizeof(buf));
     uint8_t len = 0;
-    Pack(head, nullptr, 0, buf, &len);
+    Pack(head, (uint8_t *) data, strlen(data) + 1, buf, &len);
+
+    for (int i = 0; i < len; i++) {
+        printf("%02x ", buf[i]);
+    }
+    printf("\n");
+
 
     CommonHead head_get;
     CommonTail tail_get;
